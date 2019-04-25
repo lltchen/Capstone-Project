@@ -1,12 +1,11 @@
 const initState = {
-    cat:"hi"
+    campaigns:{}
 }
 
 export const reducer = (state = initState,action) => {
    switch (action.type) {
-        case "GET_USERS":
-            
-            break;
+        case "LOAD_CAMPAIGNS":
+            return {...state, campaigns: action.payload}
     
         default:
             return state
