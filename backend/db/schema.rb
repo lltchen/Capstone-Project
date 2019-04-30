@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_04_24_201547) do
     t.string "subject"
     t.string "description"
     t.string "goal"
-    t.string "user_id"
-    t.integer "duration"
+    t.integer "user_id"
+    t.string "duration"
     t.string "reason_for_arrest"
     t.string "time_at_rikers"
     t.string "time_untill_hearing"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_201547) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.string "address"
     t.string "phone_num"

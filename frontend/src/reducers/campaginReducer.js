@@ -1,12 +1,17 @@
 const initState = {
-    campaigns:{}
+    currentUser:{},
+    campaigns:[]
 }
 
 export const reducer = (state = initState,action) => {
    switch (action.type) {
-        case "LOAD_CAMPAIGNS":
+        case "CREATE_USER":
+            return {...state, currentUser: action.payload}
+        case "LOGIN_USER":
+            return {...state, user: action.payload}
+        case "GET_CAMPAIGNS":
             return {...state, campaigns: action.payload}
-    
+
         default:
             return state
     }
@@ -17,4 +22,3 @@ export const reducer = (state = initState,action) => {
 
 
 }
-

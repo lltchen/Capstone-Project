@@ -2,16 +2,20 @@ class UserController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users, each_serializer: UserSerializer
+    render json: @users
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user, serializer: UserSerializer
+    @user = User.find_by(email:params[:email])
+    if @user
+      render json: UserSerializer.create(@user)
+    else
+      render json: {status: 'ERROR', message: 'cant find user by this email', data: @user.errors}, status: :unproccessable_entity
+    end
   end
 
   def create
-    @user = User.new(quote_params)
+    @user = User.new(user_params)
       if @user.save
         render json: @user
       else
@@ -31,7 +35,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:password,:email,:address,:phone_num,:role,:age)
+    params.require(:user).permit(:name,:password_digest,:email,:address,:phone_num,:role,:age)
 
   end
 end

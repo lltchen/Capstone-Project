@@ -21,6 +21,75 @@ float: right;
   background-color:'green';
 }
 #hero-text {
-  padding: 200px;  
+  padding: 200px;
 }
 /*-------------------------------HeroDiv------------------------- */
+/*-------------------------------Signup-------------------------- */
+#Signup form{
+  background-color: red;
+
+    width: 132px;
+    margin: auto;
+
+}
+
+
+#Signup input{
+  display: block;
+}
+
+
+
+/*-------------------------------Signup-------------------------- */
+/*-------------------------------CampaignShowPage-------------------------- */
+
+.greenBackground{
+  background-color: green;
+  width: 100vw;
+  height: inherit;
+  display: inline-block;
+}
+
+#MainContent{
+  text-align: center;
+  width: 60vw;
+  background-color: red;
+  margin: 15px;
+  display: inline-block;
+  justify-content: flex-start;
+
+}
+#CampaignImageContainer {
+  border: 2px solid yellow;
+  margin-bottom: 20px;
+}
+#CampaignDescritpionContainer h1{
+  border: 2px solid yellow;
+  margin-top: 0px;
+}
+#CampaignDescritpionContainer {
+  border: 2px solid yellow;
+
+}
+#SideContent{
+  display: inline-block;
+  height:auto;
+  width:35vw;
+  background-color: brown;
+  /* border: 2px solid yellow; */
+  position: absolute;
+  top: 65px;
+
+}
+.Donations-styles{
+  background-color: red;
+  border: 2px solid yellow;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+/*-------------------------------CampaignShowPage-------------------------- */

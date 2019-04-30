@@ -3,8 +3,13 @@ class User < ApplicationRecord
   has_many :donations, through: :campaigns
 
 
-  validates :name, uniqueness: true
-  validates :email, uniqueness: true
 
+  def my_donations
+    self.donations
+  end
+
+  def my_campaigns
+    self.campaigns
+  end
 
 end
