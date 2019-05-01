@@ -11,15 +11,18 @@ class DonationController < ApplicationController
   end
 
   def create
-    @donation = Donation.new(quote_params)
+    @donation = Donation.new(donation_params)
       if @donation.save
-        render json: @donation
+        render json: DonationSerializer.create(@donation)
       else
         render json: {status: 'ERROR', message: 'A new quote was not able to be created', data: @donation.errors}, status: :unproccessable_entity
       end
   end
 
+  def donation_params
+    params.permit(:id,:campaign_id,:donation_amount,:user_id,:time_date)
 
+  end
 
 
 end

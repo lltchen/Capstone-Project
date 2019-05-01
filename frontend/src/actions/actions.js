@@ -55,3 +55,20 @@ export const getCampaignFromApi = () => {
       )
     }
 }
+
+export const createDonationThroughApi = (donation) => {
+  return (dispatch) => {
+      return fetch("http://localhost:3000/donation",{
+        method:"POST",
+        headers:{
+          "content-type":"application/json",
+          "Accept":"application/json"
+        },
+        body: JSON.stringify({
+          ...donation
+        })
+      })
+        .then(res => res.json())
+        .then(console.log)
+    }
+}

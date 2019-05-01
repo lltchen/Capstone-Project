@@ -115,3 +115,36 @@ float: right;
 
 
 /*-------------------------------CampaignShowPage-------------------------- */
+/*-------------------------------DonationsPage-------------------------- */
+
+.display_inline{
+  display: inline-block;
+}
+#DonationsPage{
+  background: pink;
+  height: 94.5vh;
+}
+#DonationCard{
+  background-color: green;
+  height: auto;
+  width: 69%;
+}
+#CampaignCard{
+  text-align: center;
+  background-color: red;
+  height: auto;
+  width: 30%;
+}
+#DonationCard form input{
+   margin-left: 155px;
+  /* margin-bottom: 15px;
+   */
+   margin-top: 15px ;
+}
+#DonationCard form {
+width: 400px;
+margin: auto;
+background-color: yellow;
+}
+
+/*-------------------------------DonationsPage-------------------------- */
