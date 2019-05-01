@@ -1,21 +1,37 @@
 import React from 'react';
+import {connect} from "react-redux"
+import {withRouter} from 'react-router-dom'
 
+import {postCampaignObj} from "../../actions/actions.js"
 
 class CampaignCards extends React.Component {
-
+  handleClick = (campaign) => {
+    this.props.selectCampaign(this.props.campaign)
+    this.props.history.push('/campaign')
+  }
   render(){
-
+    console.log(this.props);
   return (
-    <div className="CampaignCards">
-      <div className="CampaignCardsPic"><img src="" />  </div>
+    <div className="CampaignCards" onClick={this.handleClick}>
+      <div className="CampaignCardsPic"><img src="https://fortunedotcom.files.wordpress.com/2019/01/boo.jpg" alt="Campaigns_Image" height="40px" width="40px"/>  </div>
       <div>
-        <h2></h2>
+        <h2>{this.props.campaign.subject}</h2>
       </div>
       <div>
-        <h3></h3>
+        <h3>{this.props.campaign.description}</h3>
       </div>
     </div>
   )};
 }
+const mapStateToProps = (state) => {
+  return state
+}
 
-export default CampaignCards;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectCampaign: (campaign) => {dispatch({ type: 'SELECTED_CAMPAIGN', payload: campaign })}
+  }
+
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(CampaignCards));

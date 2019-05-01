@@ -4,23 +4,29 @@ import {getCampaignFromApi} from "../actions/actions.js"
 import CampaignCards from "../components/MainCampaignComponents/CampaignCards.js"
 
 class MainCampaignPage extends React.Component {
-  state={
 
-  }
 
   componentDidMount(){
     this.props.getCampaignFromApi()
-
   }
+
   render(){
-    console.log(this.props);
-  return (
-    <div>
-<CampaignCards />
-    </div>
-      );
 
+    const campaignArry = () => {
+      if (this.props.campaigns !== []) {
+        return this.props.campaigns.map(campaign => {
+          return <CampaignCards key={campaign.id} campaign={campaign}/>
+        })
+      }
     }
-}
 
-export default connect(null,{getCampaignFromApi})(MainCampaignPage)
+  return (
+      <div>
+        {campaignArry()}
+      </div>
+  )}
+}
+const mapStateToProps = (state) =>{
+  return state
+}
+export default connect(mapStateToProps,{getCampaignFromApi})(MainCampaignPage)

@@ -41,6 +41,28 @@ float: right;
 
 
 /*-------------------------------Signup-------------------------- */
+/*-------------------------------MainCampaignPage-------------------------- */
+
+.CampaignCards{
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+}
+.CampaignCardsPic{
+  text-align: center;
+}
+.CampaignCardsPic img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+
+
+/*-------------------------------MainCampaignPage-------------------------- */
 /*-------------------------------CampaignShowPage-------------------------- */
 
 .greenBackground{

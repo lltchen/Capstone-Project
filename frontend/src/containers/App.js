@@ -3,6 +3,7 @@ import '../App.css';
 import {Route} from "react-router-dom"
 import LandingPage from './LandingPage.js';
 import MainCampaignPage from './MainCampaignPage.js';
+import DonationsPage from './DonationsPage.js';
 import CampaignShowPage from './CampaignShowPage.js';
 import Signup from '../components/LandingPageComponents/Signup.js';
 import Login from '../components/LandingPageComponents/Login.js';
@@ -11,7 +12,6 @@ import {NavBar} from '../components/LandingPageComponents/NavBar.js';
 import { connect } from "react-redux"
 
 function App(state) {
-  console.log(state);
 
   return (
     <div className="App">
@@ -22,6 +22,7 @@ function App(state) {
       <Route path="/campaign" component={CampaignShowPage}/>
       <Route path="/login" component={Login}/>
       <Route path="/dashboard" component={DashBoard}/>
+      <Route path="/donate" component={DonationsPage}/>
     </div>
   );
 }

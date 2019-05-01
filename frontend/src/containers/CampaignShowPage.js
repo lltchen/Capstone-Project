@@ -8,7 +8,7 @@ class CampaignShowPage extends React.Component {
   render(){
    return (
             <div className="greenBackground">
-            <MainContent/>
+              <MainContent/>
               <SideContent/>
             </div>
          );

@@ -5,6 +5,7 @@ class MainContent extends React.Component {
 
 
   render(){
+    console.log(this.props.selectedCampaign);
   return (
     <div id="MainContent">
       <div id="CampaignImageContainer">
@@ -12,12 +13,12 @@ class MainContent extends React.Component {
       </div>
       <div id="CampaignDescritpionContainer">
         <h1>Story</h1>
-        <p>Hionoi ojhij pijpi hpih ih oihoi jh oijoihoi h oih iohjoi joi hoi hio joij oh ih oih oih ioh ioh io hioj io hioh io hio hoi hoihdlsuobd;vaousbd;vou aphpseo hafpouesdhfpao dsupfaoishouavhsdbpuvbasdhfjn oudbvojs fhuwa  we u hhds oias ofou asuzvbusbviuasb jbasooihco. z,ilovoszh.s;s.jdahseI.sldh;Uszhe;vnz.sdjjvsjadv.asdvsd.zsv.szd..zjhbljkhb,jvhv.cugvkyh  guiygiugygug.vyugkygy ..uiyihvyivhviygbiugbiuvuhgbuihluih.iuviyghouhbuhbiuhiuhuihu</p>
+        <p>{this.props.selectedCampaign.description}</p>
       </div>
     </div>
   )};
 }
 
-const mapStateToProps = (state) => {return state}
+const mapStateToProps = ({selectedCampaign}) => {return {selectedCampaign}}
 
 export default connect(mapStateToProps)(MainContent)

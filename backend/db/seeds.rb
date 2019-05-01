@@ -1,4 +1,11 @@
 
+Donation.all.delete_all
+Campaign.all.delete_all
+User.all.delete_all
+
+
+
+
 User.create(name:"Marquis Davis", password_digest: "",email:"",address:"Flatiron District, New York, NY",phone_num:"9171286692",role:"Convict",age:14)
 User.create(name:"Tyrone Smith", password_digest: "",email:"",address:"Flatiron District, New York, NY",phone_num:"9171286692",role:"Lawyer",age:36)
 User.create(name:"Maurice Jackson", password_digest: "",email:"",address:"Flatiron District, New York, NY",phone_num:"9171286692",role:"Convict",age:23)

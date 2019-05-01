@@ -1,5 +1,6 @@
 const initState = {
     currentUser:{},
+    selectedCampaign:{},
     campaigns:[]
 }
 
@@ -11,6 +12,8 @@ export const reducer = (state = initState,action) => {
             return {...state, user: action.payload}
         case "GET_CAMPAIGNS":
             return {...state, campaigns: action.payload}
+        case "SELECTED_CAMPAIGN":
+            return {...state, selectedCampaign: action.payload}
 
         default:
             return state
