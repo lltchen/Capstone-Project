@@ -19,32 +19,42 @@ export const createUserViaApi = (user) => {
           "content-type":"application/json",
           "Accept":"application/json"
         },
-        body:JSON.stringify({...user})
+        body:JSON.stringify({user:user})
         })
         .then(res => res.json())
-        .then(userInfo => dispatch(postCreatedUser(userInfo))
+        .then(userInfo => dispatch(postCreatedUser(userInfo.user),
+        localStorage.setItem("token", userInfo.jwt) )
       )
-
 }
 }
 export const getUserFromApi = (user) => {
   console.log(user);
   return (dispatch) => {
-      return fetch("http://localhost:3000/user",{
-        method: "GET",
+      return fetch("http://localhost:3000/login",{
+        method: "POST",
         headers:{
           "content-type":"application/json",
           "Accept":"application/json"
         },
-        body:JSON.stringify({
-          username:user.email,
-          password:user.password
-        })
+        body:JSON.stringify({user:user})
         })
         .then(res => res.json())
-        .then(userInfo => dispatch(postUserFromApi(userInfo))
+        .then(userInfo => dispatch(postUserFromApi(userInfo.user))
       )
-
+    }
+}
+export const getCurrentUserFromApi = (token) => {
+  console.log(token);
+  return (dispatch) => {
+      return fetch("http://localhost:3000/current_user",{
+        method: "GET",
+        headers:{
+          "content-type":"application/json",
+          Accept:"application/json",
+          Authorization:token
+        }})
+        .then(res => res.json())
+        .then(userInfo => dispatch(postCreatedUser(userInfo.user)))
     }
 }
 export const getCampaignFromApi = () => {

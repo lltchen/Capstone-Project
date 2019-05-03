@@ -6,6 +6,7 @@ class UserController < ApplicationController
   end
 
   def show
+
     @user = User.find_by(email:params[:email])
     if @user
       render json: UserSerializer.create(@user)
@@ -15,11 +16,14 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-      if @user.save
-        render json: @user
+
+    @user = User.create(user_params)
+    byebug
+      if @user.valid?
+        @token = JWT.encode({user_id: @user.id}, "secret")
+        render json: { user: @user, jwt: @token }, status: :created
       else
-        render json: {status: 'ERROR', message: 'A new quote was not able to be created', data: @user.errors}, status: :unproccessable_entity
+        render json: { error: 'failed to create user' }, status: :not_acceptable
       end
   end
 
@@ -35,7 +39,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:password_digest,:email,:address,:phone_num,:role,:age)
+    params.require(:user).permit(:name,:password,:email,:address,:phone_num,:role,:age)
 
   end
 end

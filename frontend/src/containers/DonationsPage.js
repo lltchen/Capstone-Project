@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 import {createDonationThroughApi} from "../actions/actions.js"
 
 
@@ -23,6 +24,7 @@ class DonationsPage extends React.Component {
   handleSubmit = (e) =>{
     e.preventDefault()
     this.props.createDonationThroughApi(this.state)
+    this.props.history.push('/campaign')
   }
 
   render(){
@@ -61,4 +63,4 @@ const mapStateToProps = (state) =>{
   return state
 }
 
-export default connect(mapStateToProps,{createDonationThroughApi})(DonationsPage)
+export default connect(mapStateToProps,{createDonationThroughApi})(withRouter(DonationsPage))

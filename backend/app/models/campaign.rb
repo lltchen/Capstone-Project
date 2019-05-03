@@ -1,6 +1,7 @@
 class Campaign < ApplicationRecord
   belongs_to :user
   has_many :donations
+  serialize :my_donations, Array
 
   def my_donations
     self.donations
@@ -17,4 +18,6 @@ class Campaign < ApplicationRecord
   def campaign_creator
     self.user.name
   end
+
+
 end
