@@ -5,6 +5,7 @@ import {createDonationThroughApi} from "../actions/actions.js"
 
 
 class DonationsPage extends React.Component {
+
   state = {
     donation_amount:"",
     comments:"",
@@ -28,7 +29,7 @@ class DonationsPage extends React.Component {
   }
 
   render(){
-console.log(this.props);
+
   return (
         <div id="DonationsPage">
           <div id="DonationCard" className="display_inline">
@@ -57,8 +58,9 @@ console.log(this.props);
           </div>
         </div>
          )
-  }
-}
+       }
+     }
+
 const mapStateToProps = (state) =>{
   return state
 }

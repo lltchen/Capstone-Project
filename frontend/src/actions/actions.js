@@ -4,7 +4,7 @@
 const postCreatedUser = (user) => ({ type: 'CREATE_USER', payload: user })
 const postUserFromApi = (user) => ({ type: 'LOGIN_USER', payload: user })
 const postCampaignsFromApi = (campaigns) => ({ type: 'GET_CAMPAIGNS', payload: campaigns })
-
+const selectCampaign = (campaign) => ({ type: 'SELECTED_CAMPAIGN', payload: campaign })
 
 
 
@@ -13,13 +13,13 @@ const postCampaignsFromApi = (campaigns) => ({ type: 'GET_CAMPAIGNS', payload: c
 export const createUserViaApi = (user) => {
   console.log(user);
   return (dispatch) => {
+    const userData = new FormData()
+    Object.keys(user).forEach((key,value)=> {
+      userData.append(key,user[value])
+    })
       return fetch("http://localhost:3000/user",{
         method: "POST",
-        headers:{
-          "content-type":"application/json",
-          "Accept":"application/json"
-        },
-        body:JSON.stringify({user:user})
+        body:userData
         })
         .then(res => res.json())
         .then(userInfo => dispatch(postCreatedUser(userInfo.user),
@@ -28,7 +28,6 @@ export const createUserViaApi = (user) => {
 }
 }
 export const getUserFromApi = (user) => {
-  console.log(user);
   return (dispatch) => {
       return fetch("http://localhost:3000/login",{
         method: "POST",
@@ -57,7 +56,23 @@ export const getCurrentUserFromApi = (token) => {
         .then(userInfo => dispatch(postCreatedUser(userInfo.user)))
     }
 }
-export const getCampaignFromApi = () => {
+export const createCampaignViaApi = (campaign) => {
+  console.log(campaign);
+  return (dispatch) => {
+    const data = new FormData()
+    Object.keys(campaign).forEach((key,value)=>{
+        data.append(key,campaign[key])
+      })
+      return fetch("http://localhost:3000/campaign",{
+        method: "POST",
+        body: data
+        })
+        .then(res => res.json())
+        .then(newCampaign => dispatch(selectCampaign(newCampaign))
+        )
+      }
+  }
+export const getAllCampaignsFromApi = () => {
   return (dispatch) => {
       return fetch("http://localhost:3000/campaign")
         .then(res => res.json())
@@ -65,7 +80,6 @@ export const getCampaignFromApi = () => {
       )
     }
 }
-
 export const createDonationThroughApi = (donation) => {
   return (dispatch) => {
       return fetch("http://localhost:3000/donation",{

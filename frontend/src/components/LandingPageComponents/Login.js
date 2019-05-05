@@ -29,7 +29,6 @@ class Login extends React.Component {
 
   render(){
 
-    console.log(this.props);
   return (
     <div id="Signup">
       <form onSubmit={e => this.handleSubmit(e)}>

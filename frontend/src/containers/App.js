@@ -14,6 +14,7 @@ import { connect } from "react-redux"
 import {getCurrentUserFromApi} from "../actions/actions"
 
 class App extends React.Component{
+
   componentDidMount(){
     let token = localStorage.token
     !!token ?  this.props.getCurrentUserFromApi(token):  this.props.history.push("/")
@@ -38,4 +39,5 @@ class App extends React.Component{
 const mapStateToProps = (state,ownProps) => ({
   state
 })
+
 export default connect(mapStateToProps,{getCurrentUserFromApi})(withRouter(App));

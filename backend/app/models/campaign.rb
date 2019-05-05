@@ -2,6 +2,7 @@ class Campaign < ApplicationRecord
   belongs_to :user
   has_many :donations
   serialize :my_donations, Array
+  has_one_attached :image
 
   def my_donations
     self.donations

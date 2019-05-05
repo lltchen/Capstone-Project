@@ -13,7 +13,7 @@ class DonationController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
       if @donation.save
-        render json: DonationSerializer.create(@donation)
+        render json: @donation
       else
         render json: {status: 'ERROR', message: 'A new quote was not able to be created', data: @donation.errors}, status: :unproccessable_entity
       end

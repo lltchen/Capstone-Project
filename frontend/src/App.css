@@ -1,7 +1,18 @@
 
+
+p,li{
+  color: #282828;
+
+}
+
+
+
 /*-------------------------------NavBar------------------------- */
 #NavBar{
+  padding: 8px 0px;
   vertical-align: center;
+  border-bottom: 1px solid lightgray;
+
 }
 #Login-Signup {
   height: 50px;
@@ -9,6 +20,7 @@
 #Login-Signup p{
 display: inline-block;
 padding-right: 25px;
+
 float: right;
 }
 /*-------------------------------NavBar------------------------- */
@@ -66,7 +78,7 @@ float: right;
 /*-------------------------------CampaignShowPage-------------------------- */
 
 .greenBackground{
-  background-color: green;
+  background-color: rgb(249,256,248);
   width: 100vw;
   height: inherit;
   display: inline-block;
@@ -75,38 +87,87 @@ float: right;
 #MainContent{
   text-align: center;
   width: 60vw;
-  background-color: red;
+  /* background-color: red; */
   margin: 15px;
   display: inline-block;
   justify-content: flex-start;
 
 }
 #CampaignImageContainer {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   margin-bottom: 20px;
-}
-#CampaignDescritpionContainer h1{
-  border: 2px solid yellow;
-  margin-top: 0px;
-}
-#CampaignDescritpionContainer {
-  border: 2px solid yellow;
 
 }
+
+#CampaignImageContainer  img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+#CampaignDescritpionContainer {
+  border: 2px solid lightgray;
+  text-align: center;
+  margin-top: 40px;
+  height: 70px;
+
+}
+
+#CampaignDescritpionContainer li{
+  /* border: 2px solid yellow; */
+  list-style: none;
+  display: inline-block;
+  margin:auto;
+  width: 33.33%;
+  padding-top: 30px;
+  color: #282828;
+  font-weight: 300;
+
+}
+#CampaignDescritpionContainer ul{
+height: 100%;
+margin: 0px;
+padding-left: 0px;
+}
+
 #SideContent{
   display: inline-block;
   height:auto;
   width:35vw;
-  background-color: brown;
+  /* background-color: yellow; */
   /* border: 2px solid yellow; */
   position: absolute;
-  top: 65px;
+  top: 283px;
 
 }
 .Donations-styles{
-  background-color: red;
-  border: 2px solid yellow;
+  border-top:  0.3rem solid rgb(19,147,97);
   margin-bottom: 20px;
+}
+.Donations-styles h2{
+  margin-bottom: 0px;
+      color: #282828;
+      font-weight:400;
+}
+.Donations-styles P{
+  margin-top: 0px;
+  color: #656969;
+
+}
+.Donations-styles button{
+  height: 50px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(19,147,97);
+  margin-top: 18px;
+  border: none;
+  font-size: 17px;
+
+}
+.Donations-styles #currentAmount{
+  color: rgb(19,147,97);
 }
 
 
@@ -136,7 +197,7 @@ float: right;
   width: 30%;
 }
 #DonationCard form input{
-   margin-left: 155px;
+   margin-left: 15px;
   /* margin-bottom: 15px;
    */
    margin-top: 15px ;
@@ -148,3 +209,54 @@ background-color: yellow;
 }
 
 /*-------------------------------DonationsPage-------------------------- */
+/*-------------------------------CampaignFormPage-------------------------- */
+#CampaignForm{
+    background-color: blue;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+#CampaignForm input{
+  display: block;
+  margin-left: 35px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+
+
+/*-------------------------------CampaignFormPage-------------------------- */
+/*-------------------------------HeadingDivPage-------------------------- */
+#HeadingDiv{
+  width: 100vw;
+  height: 200px;
+  background-color: rgb(249,256,248);
+  text-align: center;
+  margin-top: 10;
+
+}
+
+#HeadingDiv #heading{
+padding-top: 15px;
+margin-bottom: 30px;
+}
+
+#heading h1{
+  font-weight: 350;
+  font-size: 39px;
+  margin-bottom: -10px;
+}
+#sub_heading{
+  font-size: 22px;
+  width: 70vw;
+  margin: auto;
+}
+
+#sub_heading h5{
+  font-weight: 350;
+  color: #656969;
+
+}
+
+/*-------------------------------HeadingDivPage-------------------------- */

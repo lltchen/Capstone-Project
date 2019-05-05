@@ -11,7 +11,8 @@ class CampaignController < ApplicationController
     end
 
     def create
-      @campaign = Campaign.new(quote_params)
+      @campaign = Campaign.new(campaign_params)
+      # @campaign.image.attach(params[:image])
         if @campaign.save
           render json: @campaign
         else
@@ -29,6 +30,6 @@ class CampaignController < ApplicationController
     end
 
     def campaign_params
-      params.require(:campaign).permit(:subject,:description,:goal,:user_id,:duration,:reason_for_arrest,:time_at_rikers,:time_untill_hearing,:for_whom,:relationship)
+      params.permit(:image,:subject,:description,:goal,:user_id,:duration,:reason_for_arrest,:time_at_rikers,:time_untill_hearing,:for_whom,:relationship)
     end
 end

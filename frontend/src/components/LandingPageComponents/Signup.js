@@ -11,7 +11,8 @@ class Signup extends React.Component {
     address:"",
     phone_num:"",
     role:"",
-    age:""
+    age:"",
+    image:null
   }
 
   handleSubmit = (e)=> {
@@ -24,7 +25,11 @@ class Signup extends React.Component {
   handleChange = (e)=> {
     if (e.target.name === "age") {
         this.setState({
-          [e.target.name]:parseInt(e.target.value)
+          age: parseInt(e.target.value)
+        })
+    }if (e.target.name === "image") {
+        this.setState({
+          image: e.target.files[0]
         })
     }else {
         this.setState({
@@ -34,7 +39,6 @@ class Signup extends React.Component {
 
   render(){
 
-    console.log(this.props);
   return (
     <div id="Signup">
       <form onSubmit={e => this.handleSubmit(e)}>
@@ -52,14 +56,16 @@ class Signup extends React.Component {
         <input type="text" name="age" value={this.state.age} onChange={e => this.handleChange(e)}></input>
         <label>Role :</label>
         <input type="text" name="role" value={this.state.role} onChange={e => this.handleChange(e)}></input>
+        <input type="file" name="image"  onChange={e => this.handleChange(e)}></input>
         <input type="submit" value="Signup"/>
       </form>
     </div>
   )};
-}
+  }
 
-const mapStateToProps = (state) => {
+  const mapStateToProps = (state) => {
 return state
 
 }
+
 export default connect(mapStateToProps,{createUserViaApi})(withRouter(Signup))
