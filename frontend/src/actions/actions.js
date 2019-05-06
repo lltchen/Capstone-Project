@@ -15,7 +15,7 @@ export const createUserViaApi = (user) => {
   return (dispatch) => {
     const userData = new FormData()
     Object.keys(user).forEach((key,value)=> {
-      userData.append(key,user[value])
+      userData.append(key,user[key])
     })
       return fetch("http://localhost:3000/user",{
         method: "POST",

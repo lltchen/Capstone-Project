@@ -16,11 +16,11 @@ class UserController < ApplicationController
   end
 
   def create
-    byebug
+
     @user = User.create(user_params)
       if @user.valid?
         @token = JWT.encode({user_id: @user.id}, "secret")
-        render json: { user: @user, jwt: @token }, status: :created
+        render json: { user: ActiveModel::Serializer::UserSerializer.new(@user), jwt: @token }, status: :created
       else
         render json: { error: 'failed to create user' }, status: :not_acceptable
       end
@@ -38,7 +38,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.permit(:name,:image,:password,:email,:address,:phone_num,:role,:age)
+    params.permit(:name,:user_image,:password,:email,:address,:phone_num,:role,:age)
 
   end
 end

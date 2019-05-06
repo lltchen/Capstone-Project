@@ -11,7 +11,7 @@ class DashBoard extends React.Component {
     <div id="DashBoard">
       Hello  {this.props.currentUser.name}!!!!!!!!!!!!!!!!
       <br/>
-      <img src={this.props.currentUser.image}/>
+      <img src={`http://localhost:3000/${this.props.currentUser.user_image}`}/>
       <div><Link to="/campaign/create"> Create New Campaign</Link></div>
       <div></div>
       <div></div>

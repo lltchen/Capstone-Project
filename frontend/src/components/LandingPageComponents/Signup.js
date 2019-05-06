@@ -12,7 +12,7 @@ class Signup extends React.Component {
     phone_num:"",
     role:"",
     age:"",
-    image:null
+    user_image:null
   }
 
   handleSubmit = (e)=> {
@@ -27,9 +27,9 @@ class Signup extends React.Component {
         this.setState({
           age: parseInt(e.target.value)
         })
-    }if (e.target.name === "image") {
+    }if (e.target.name === "user_image") {
         this.setState({
-          image: e.target.files[0]
+          user_image: e.target.files[0]
         })
     }else {
         this.setState({
@@ -56,7 +56,7 @@ class Signup extends React.Component {
         <input type="text" name="age" value={this.state.age} onChange={e => this.handleChange(e)}></input>
         <label>Role :</label>
         <input type="text" name="role" value={this.state.role} onChange={e => this.handleChange(e)}></input>
-        <input type="file" name="image"  onChange={e => this.handleChange(e)}></input>
+        <input type="file" name="user_image"  onChange={e => this.handleChange(e)}></input>
         <input type="submit" value="Signup"/>
       </form>
     </div>

@@ -17,7 +17,6 @@ class MainContent extends React.Component {
                   <h4>Time/Date: {donation.created_at}</h4>
                  </div>
                )
-
         })}
       }
 
@@ -29,12 +28,13 @@ class MainContent extends React.Component {
               })}
               return total
       }
-console.log();
+
+
   return (
-    <div>
+    <div id="stuff">
       <div id="MainContent">
         <div id="CampaignImageContainer">
-          <img src={`http://localhost:3000/${this.props.selectedCampaign.image}`} />
+          <img src={!!this.props.selectedCampaign.image ? `http://localhost:3000/${this.props.selectedCampaign.image}`: "https://www.hrw.org/sites/default/files/styles/open_graph/public/media/images/photographs/2007_China_BlackJails.jpg?itok=3QmOUwD0"} />
         </div>
       </div>
       <div id="SideContent">
@@ -45,7 +45,7 @@ console.log();
           <p>backers</p>
           <h2>{amountRaised()}</h2>
           <p>hours to go</p>
-          <Link to="/donate"><button>Donate Now</button></Link>
+          <Link to="/donate"><button id="donateButton">Donate Now</button></Link>
         </div>
       </div>
     </div>

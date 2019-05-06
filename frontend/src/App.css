@@ -30,7 +30,9 @@ float: right;
 #HeroDiv{
   text-align: center;
   height: 94vh;
-  background-color:'green';
+  background-image: url("http://www.governmentsecrets.com/wp-content/uploads/2015/02/tdcj-inmate-search-prison-4.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 }
 #hero-text {
   padding: 200px;
@@ -91,6 +93,7 @@ float: right;
   margin: 15px;
   display: inline-block;
   justify-content: flex-start;
+
 
 }
 #CampaignImageContainer {
@@ -160,10 +163,11 @@ padding-left: 0px;
   width: 100%;
   color: white;
   text-decoration: none;
-  background-color: rgb(19,147,97);
+  background-color: rgba(19,147,97,.8);
   margin-top: 18px;
   border: none;
   font-size: 17px;
+  transition: 400ms
 
 }
 .Donations-styles #currentAmount{
@@ -171,11 +175,61 @@ padding-left: 0px;
 }
 
 
+#donateButton:hover{
+  transform: scale(1);
+  background-color: rgba(19,147,97,1);
 
+}
 
+#CampaignDescritpionContainer li:active{
+color: yellow;
+}
 
+.underLine{
+  border-bottom: 2px solid blue;
+  transition:2s;
+}
 
 /*-------------------------------CampaignShowPage-------------------------- */
+/*-------------------------------CampaignComponent-------------------------- */
+
+
+
+#CampaignComponent{
+  height: auto;
+  min-height: 600px;
+  width: 60vw;
+  margin: auto;
+  background: yellow;
+  text-align: center;
+}
+#CommentsComponent{
+  height: auto;
+  min-height: 600px;
+  width: 60vw;
+  margin: auto;
+  background: yellow;
+  text-align: center;
+}
+#UpdatesComponent{
+  height: auto;
+  min-height: 600px;
+  width: 60vw;
+  margin: auto;
+  background: yellow;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------CampaignComponent-------------------------- */
 /*-------------------------------DonationsPage-------------------------- */
 
 .display_inline{
