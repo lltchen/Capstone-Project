@@ -11,19 +11,34 @@ p,li{
 #NavBar{
   padding: 8px 0px;
   vertical-align: center;
-  border-bottom: 1px solid lightgray;
-
+    position: fixed;
+    z-index: 15;
+    width: 100vw;
 }
+
+#NavBar img{
+  padding-left: 10px;
+}
+
+
 #Login-Signup {
   height: 50px;
 }
+
 #Login-Signup p{
 display: inline-block;
 padding-right: 25px;
-
 float: right;
 }
 /*-------------------------------NavBar------------------------- */
+/*-------------------------------Footer------------------------- */
+#Footer{
+  height: 11vh;
+  width: 100vw;
+  background-color:yellow;
+  text-align: center;
+}
+/*-------------------------------Footer------------------------- */
 
 /*-------------------------------HeroDiv------------------------- */
 
@@ -39,17 +54,24 @@ background-size: cover;
 }
 /*-------------------------------HeroDiv------------------------- */
 /*-------------------------------Signup-------------------------- */
+#Signup{
+height: 89vh;
+width: 100vw;
+}
+
 #Signup form{
   background-color: red;
-
+  padding: 200px;
     width: 132px;
     margin: auto;
 
 }
 
 
+
 #Signup input{
   display: block;
+  margin: 20px;
 }
 
 
@@ -314,3 +336,129 @@ margin-bottom: 30px;
 }
 
 /*-------------------------------HeadingDivPage-------------------------- */
+/*-------------------------------Slideshow-------------------------- */
+.slide-container {
+  width: 70%;
+  margin: auto; }
+
+h3 {
+  text-align: center; }
+
+
+
+.each-fade {
+  display: flex;
+}
+
+.each-fade .image-container {
+  overflow: hidden;
+}
+
+.each-fade .image-container img {
+  width: 100%;
+
+  /* filter:sepia(100%); */
+}
+
+.each-fade h2 {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #adceed;
+}
+/*-------------------------------Slideshow-------------------------- */
+/*-------------------------------LogoDiv-------------------------- */
+#JailStatsDiv{
+  width:100%;
+  height: auto;
+  background-color: yellow;
+}
+.image-container{
+  height: 100%;
+  width: 100%;
+}
+#logoDiv{
+  width: 100vw;
+  z-index: 999;
+  position: absolute;
+  height: 1000px;
+}
+
+#picDiv{
+  text-align: center;
+  padding-top: 350px;
+  position: relative;
+
+  max-height: 170px;
+  max-width: 580px;
+  margin: auto;
+}
+#picDiv img{
+  height: 100%;
+  width: 100%;
+  border: 1px dotted white;
+  box-shadow: 0px 0px 11px 11px black;
+
+}
+/*-------------------------------LogoDiv-------------------------- */
+/*-------------------------------MissionStatementDiv-------------------------- */
+#MissionStatementDiv{
+  height: 700px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  background-color: gray;
+  margin-top: -3px;
+}
+
+#MissionStatementHeading{
+  margin: auto;
+  width: 100vh;
+  padding-top: 200px;
+  padding-bottom: 80px;
+}
+
+#MissionStatementHeading h1{
+margin-top: 0px;
+
+}
+#MissionStatementText{
+  width: 100vh;
+  margin: auto;
+
+}
+
+
+
+
+
+
+
+/*-------------------------------MissionStatementDiv-------------------------- */
+#jailStatsDivTitle{
+  width:100vw;
+  background-color: red;
+  padding: 90px 0px;
+  text-align: center;
+
+}
+
+
+#lineChartDiv{
+  height: 600px;
+  width: 39%;
+  display: inline-block;
+  padding: 80px;
+}
+#pieChartDiv{
+  height: 600px;
+  width: 39%;
+  display: inline-block;
+  padding: 80px;
+
+}
+.inline-block{
+  display: inline-block;
+}

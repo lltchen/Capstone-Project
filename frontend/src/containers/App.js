@@ -10,14 +10,25 @@ import Signup from '../components/LandingPageComponents/Signup.js';
 import Login from '../components/LandingPageComponents/Login.js';
 import DashBoard from '../components/DashBoardComponents/DashBoard.js';
 import {NavBar} from '../components/LandingPageComponents/NavBar.js';
+import {Footer} from '../components/LandingPageComponents/Footer.js';
 import { connect } from "react-redux"
 import {getCurrentUserFromApi} from "../actions/actions"
 
 class App extends React.Component{
+  state = {
+    isTop: true,
+  }
 
   componentDidMount(){
     let token = localStorage.token
     !!token ?  this.props.getCurrentUserFromApi(token):  this.props.history.push("/")
+
+    document.addEventListener('scroll', () => {
+          const isTop = window.scrollY < 100;
+          if (isTop !== this.state.isTop) {
+              this.setState({ isTop })
+          }
+        })
   }
 
   render(){
@@ -32,6 +43,7 @@ class App extends React.Component{
       <Route path="/login" component={Login}/>
       <Route path="/dashboard" component={DashBoard}/>
       <Route path="/donate" component={DonationsPage}/>
+      <Footer/>
     </div>
   );}
 }

@@ -19,7 +19,7 @@ export function NavBar() {
 console.log(localStorage.length);
   return (
     <div id="NavBar">
-        <Link to="/"><img src="https://fortunedotcom.files.wordpress.com/2019/01/boo.jpg" alt="" height="40px" width="40px" style={{float:"left", paddingTop: "4px"}} /></Link>
+        <Link to="/"><img src={require("../../images/mini-logo.jpg") }alt="" height="40px" width="40px" style={{float:"left", paddingTop: "4px"}} /></Link>
         <div id="Login-Signup">
         {localStorage.length > 0 ? loggedIn() : notLoggedIn() }
         </div>

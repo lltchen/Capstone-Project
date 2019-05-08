@@ -9,7 +9,7 @@ class UserController < ApplicationController
 
     @user = User.find_by(email:params[:email])
     if @user
-      render json: UserSerializer.create(@user)
+      render json: @user
     else
       render json: {status: 'ERROR', message: 'cant find user by this email', data: @user.errors}, status: :unproccessable_entity
     end

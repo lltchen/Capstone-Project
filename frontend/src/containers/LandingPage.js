@@ -1,10 +1,19 @@
 import React from 'react';
-import {HeroDiv} from '../components/LandingPageComponents/HeroDiv.js';
+import {Slideshow} from '../components/LandingPageComponents/HeroDiv.js';
+import JailStats from '../components/LandingPageComponents/JailStats.js';
+import {MissionStatement} from '../components/LandingPageComponents/missionStatement.js';
 
 function LandingPage() {
   return (
     <div className="App" style={{backgroundColor:'green'}}>
-      <HeroDiv/>
+      <div id="logoDiv">
+        <div id="picDiv">
+          <img src={require("../images/logo2.jpg")}/>
+        </div>
+      </div>
+      <Slideshow/>
+      <MissionStatement/>
+      <JailStats/>
     </div>
   );
 }

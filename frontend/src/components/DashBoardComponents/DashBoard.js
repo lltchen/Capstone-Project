@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux"
 import {Link} from "react-router-dom"
+import PieChart from "./PieChart.js"
+import LineChart from "./LineChart.js"
+import BarChart from "./BarChart.js"
 
 class DashBoard extends React.Component {
 
