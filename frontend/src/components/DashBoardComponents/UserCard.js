@@ -9,8 +9,8 @@ class UserCard extends React.Component {
   return (
     <div id="UserCard">
       <div id="UserCardPic">
-        <img src={`http://localhost:3000/${this.props.currentUser.user_image}`}/>
-      <div>
+        <img height="100%" width="100%" src={`http://localhost:3000/${this.props.currentUser.user_image}`}/>
+      </div>
       <div id="UserCardInfo">
         <div>Name : {this.props.currentUser.name}</div>
         <div>Address : {this.props.currentUser.address}</div>

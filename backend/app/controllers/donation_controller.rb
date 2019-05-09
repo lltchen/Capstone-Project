@@ -7,13 +7,13 @@ class DonationController < ApplicationController
 
   def show
     @donation = Donation.find(params[:id])
-    render json: @donation
+    render json: ActiveModel::Serializer::DonationSerializer.new(@donation)
   end
 
   def create
     @donation = Donation.new(donation_params)
       if @donation.save
-        render json: @donation
+        render json: ActiveModel::Serializer::DonationSerializer.new(@donation)
       else
         render json: {status: 'ERROR', message: 'A new quote was not able to be created', data: @donation.errors}, status: :unproccessable_entity
       end

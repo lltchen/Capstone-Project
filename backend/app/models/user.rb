@@ -7,11 +7,23 @@ class User < ApplicationRecord
 
 
   def my_donations
-    self.donations
+    self.donations.map do |donation|
+      ActiveModel::Serializer::DonationSerializer.new(donation)
+    end
   end
 
   def my_campaigns
-    self.campaigns
+    self.campaigns.map do |campaign|
+      ActiveModel::Serializer::CampaignSerializer.new(campaign)
+    end
+  end
+
+  def total_donation_amount
+    self.donations.map { |donation| donation.donation_amount }.sum
+  end
+
+  def num_of_donations
+    self.donations.length
   end
 
 end

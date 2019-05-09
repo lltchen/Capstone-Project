@@ -10,7 +10,7 @@ class PieChart extends React.Component {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [
             {
-              label: 'My First dataset',
+              label: 'Growth of Your Campaign',
               fill: true,
                     lineTension: 0.1,
                     backgroundColor: 'green',
@@ -35,10 +35,9 @@ class PieChart extends React.Component {
 
 
   return (
-    <div id="JailStatsDiv">
-      <div id="jailStatsDivTitle"><u>BY THE STATS</u></div>
-      <div id="lineChartDiv"><Pie ref="chart" data={data} width={50} height={100} options={{ maintainAspectRatio: false }}/></div>
-    </div>
+
+  <Pie ref="chart" data={data} width={50} height={50} options={{ maintainAspectRatio: false }}/>
+
   )}
 }
 

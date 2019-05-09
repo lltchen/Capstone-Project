@@ -3,10 +3,8 @@ class Donation < ApplicationRecord
   delegate :user, to: :campaign
 
   def users_name
-    User.find(self.user_id).name
+    User.find_by(name:self.user.name).name
   end
 
-  def time_date
-    self.created_at
-  end
+
 end

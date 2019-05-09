@@ -10,7 +10,7 @@ class BarChart extends React.Component {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [
             {
-              label: 'My First dataset',
+              label: 'Rate of Donations Per Month',
               fill: true,
                     lineTension: 0.1,
                     backgroundColor: 'green',
@@ -35,10 +35,8 @@ class BarChart extends React.Component {
 
 
   return (
-    <div id="JailStatsDiv">
-      <div id="jailStatsDivTitle"><u>BY THE STATS</u></div>
-      <div id="lineChartDiv"><Bar ref="chart" data={data} width={50} height={100} options={{ maintainAspectRatio: false }}/></div>
-    </div>
+  <Bar ref="chart" data={data} width={50} height={100} options={{ maintainAspectRatio: false }}/>
+
   )}
 }
 

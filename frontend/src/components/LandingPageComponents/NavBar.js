@@ -10,7 +10,8 @@ export function NavBar() {
   const loggedIn = () => {
     return<div> <p><Link to ="/Campaigns">Campaigns</Link></p>
     <p><Link to ="/Dashboard">Dashboard</Link></p>
-    <p onClick={e => handleLogout()}><Link to ="/">Logout</Link></p></div>
+    <p onClick={e => handleLogout()}><Link to ="/">Logout</Link></p>
+    <p><Link to="/campaign/create"> Create Campaign</Link></p></div>
   }
   const notLoggedIn = () => {
     return <div><p><Link to ="/login">Login</Link></p>

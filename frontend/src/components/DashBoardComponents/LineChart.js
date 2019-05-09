@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux"
-import {Bar} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 
 class LineChart extends React.Component {
@@ -10,7 +10,7 @@ class LineChart extends React.Component {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [
             {
-              label: 'My First dataset',
+              label: 'Rate of Growth Over Time',
               fill: true,
                     lineTension: 0.1,
                     backgroundColor: 'green',
@@ -35,10 +35,8 @@ class LineChart extends React.Component {
 
 
   return (
-    <div id="JailStatsDiv">
-      <div id="jailStatsDivTitle"><u>BY THE STATS</u></div>
-      <div id="lineChartDiv"><Bar ref="chart" data={data} width={50} height={100} options={{ maintainAspectRatio: false }}/></div>
-    </div>
+  <Line ref="chart" data={data} width={50} height={100} options={{ maintainAspectRatio: false }}/>
+
   )}
 }
 
